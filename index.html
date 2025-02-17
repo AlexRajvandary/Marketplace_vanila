@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Marketplace</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
+            margin-left: 100px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .header-buttons {
+            display: flex;
+            align-items: center;
+        }
+        .header-buttons button {
+            margin-left: 10px;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .header-buttons .sell-now {
+            background-color: #333;
+            color: white;
+        }
+        .header-buttons .sign-up {
+            background-color: #fcfcfc;
+            color: black;
+            border: 1px solid black;
+        }
+        .icons {
+            display: flex;
+            margin-left: 20px;
+        }
+        .icons div {
+            width: 24px;
+            height: 24px;
+            background-color: #ddd;
+            margin-left: 10px;
+            border-radius: 50%;
+        }
+        .categories {
+            display: flex;
+            justify-content: flex-start;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 64px;
+            z-index: 999;
+        }
+        .categories div{
+            margin-left: 100px;
+        }
+        .categories a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .main-content {
+            padding: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 15px;
+            text-decoration: none;
+        }
+        .popular-items {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .popular-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .popular-item img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            background-color: #ddd;
+        }
+        .popular-item p {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .shop-by-price {
+            display: flex;
+            gap: 30px;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .shop-by-price div {
+            width: 300px;
+            height: 180px;
+            background: linear-gradient(to bottom, #979797, #e2e2e2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .shop-by-style {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .style-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .style-item img{
+            border-radius: 10px;
+        }
+        .style-item p{
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .search-bar {
+                margin-left: 0;
+                width: 90%;
+                margin-bottom: 10px;
+            }
+            .header-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .categories {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding: 10px;
+            }
+            .categories div {
+                margin-left: 0;
+            }
+            .shop-by-price div {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        footer {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+        }
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-column h4 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .footer-column a {
+            text-decoration: none;
+            color: #333;
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+        .icons i {
+    font-size: 20px;
+    margin-left: 15px;
+    color: #333;
+    cursor: pointer;
+}
+.icons i:hover {
+    color: #000;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="header-buttons">
+            <button class="sell-now">Sell Now</button>
+            <button class="sign-up">Sign Up</button>
+            <div class="icons">
+                <i class="bi bi-cart"></i>  <!-- Корзина -->
+                <i class="bi bi-heart"></i> <!-- Избранное -->
+                <i class="bi bi-person"></i> <!-- Профиль -->
+                <i class="bi bi-bell"></i>  <!-- Уведомления -->         <!-- Уведомления -->                
+            </div>
+        </div>
+    </header>
+    <nav class="categories">
+        <div>
+            <a href="catalog.html">Menswear</a>
+            <a href="catalog.html">Womenswear</a>
+            <a href="catalog.html">Kids</a>
+            <a href="catalog.html">Brands</a>
+            <a href="catalog.html">Sale</a>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="section-title">Popular This Week</div>
+        <div class="popular-items">
+            <div class="popular-item"><img src="img/1.webp" alt="Popular Item"><p>Date night</p></div>
+            <div class="popular-item"><img src="img/2.webp" alt="Popular Item"><p>Jordan 5</p></div>
+            <div class="popular-item"><img src="img/3.webp" alt="Popular Item"><p>Jeans shorts</p></div>
+            <div class="popular-item"><img src="img/4.webp" alt="Popular Item"><p>Peppermayo</p></div>
+            <div class="popular-item"><img src="img/4.webp" alt="Popular Item"><p>Polka dots</p></div>
+        </div>
+        <div class="section-title">Shop by Price</div>
+        <div class="shop-by-price">
+            <div>Under 10£</div>
+            <div>Under 20£</div>
+            <div>Under 50£</div>
+            <div>Under 100£</div>
+        </div>
+        <div class="section-title">Shop by Style</div>
+        <div class="shop-by-style">
+            <div class="style-item"><img src="img/sports.webp" alt="Style Item"><p class="style-label">Vintage Sports</p></div>
+            <div class="style-item"><img src="img/baggy.webp" alt="Style Item"><p class="style-label">Baggy Basics</p></div>
+            <div class="style-item"><img src="img/carh.webp" alt="Style Item"><p class="style-label">Workwear</p></div>
+            <div class="style-item"><img src="img/stripe_sweat__2_.webp" alt="Style Item"><p class="style-label">Stripes</p></div>
+            <div class="style-item"><img src="img/roma__3_.webp" alt="Style Item"><p class="style-label">'90s Romance</p></div>
+            <div class="style-item"><img src="img/gym_e.webp" alt="Style Item"><p class="style-label">Gym Essentials</p></div>
+        </div>
+        <div class="section-title">The Depop Edit</div>
+    </div>
+    <footer>
+        <div class="footer-column">
+            <h4>Brand Name</h4>
+            <a href="#">About us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">News</a>
+            <a href="#">Impact</a>
+        </div>
+        <div class="footer-column">
+            <h4>Sell</h4>
+            <a href="#">Sell on Depop</a>
+            <a href="#">Become a Depop Creator</a>
+        </div>
+        <div class="footer-column">
+            <h4>Help</h4>
+            <a href="#">Help Centre</a>
+            <a href="#">Safety Centre</a>
+            <a href="#">Depop Status</a>
+        </div>
+    </footer>
+</body>
+</html>
