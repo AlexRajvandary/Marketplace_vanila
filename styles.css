@@ -386,3 +386,9 @@ color: #000;
 .navigation-subcategory-list li:hover {
     background-color: #F3F3F3;
 }
+
+.category:not(:hover) .hover-container:not(:hover) {
+    opacity: 0;
+    visibility: hidden;
+   
+}
