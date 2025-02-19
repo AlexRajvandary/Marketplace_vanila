@@ -1,0 +1,388 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: block;
+    unicode-bidi: isolate;
+    position: sticky;
+    top: 0px;
+    background: rgb(255, 255, 255);
+    width: 100%;
+    z-index: 3;
+}
+.header{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0px auto;
+    border-bottom: 1px solid rgb(215, 215, 215);
+    padding: 12px 32px;
+    min-height: 65px;
+}
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    position: relative;
+    z-index: 1;
+    margin: auto;
+    width: calc(42vw);
+    max-width: 704px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    border: 1.5px solid #7c7c7c;
+    border-radius: 30px;
+}
+.main_nav{
+    display: flex;
+    height: 32px;
+    align-items: center;
+}
+.main_nav ul{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: 4px;
+    margin-left: -2px;
+}
+.main_nav li{
+    list-style: none;
+    display: none;
+    cursor: pointer;
+    min-width: 44px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.main_nav button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.main_nav .sell-now {
+    background-color: #333;
+    color: white;
+}
+.main_nav .sign-up {
+    background-color: #fcfcfc;
+    color: black;
+    border: 1px solid black;
+}
+.icons {
+    
+    margin-left: 20px;
+}
+.icons div {
+    width: 24px;
+    height: 24px;
+    background-color: #ddd;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+.categories {
+    justify-content: flex-start;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 64px;
+    z-index: 999;
+}
+
+button.category{
+    font-size: 1rem;
+    font-family: inherit; 
+}
+
+.categories-container{
+    margin-left: 100px;
+    display: flex;
+   
+}
+
+.category{
+    line-height: 1.5;
+    background: rgb(255, 255, 255);
+    padding: 16px;
+    border: 0px;
+    color: rgb(38, 38, 38);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.categories a{
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.main-content {
+    padding: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.section-title {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+.slider-container {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 56px 0px 0px;
+}
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    display: flex;
+    min-width: 100%;
+}
+.popular-items {
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    padding: 0px 56px 0px 0px;
+    text-align: center;
+}
+.popular-item {
+    flex: 1;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+.popular-item img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+.popular-item p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.arrow {
+    margin: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}
+.shop-by-price {
+    display: flex;
+    gap: 30px;
+    padding: 10px 0;
+    text-align: center;
+}
+.shop-by-price div {
+    display: grid;
+        width: 100%;
+        height: 142px;
+        background: linear-gradient(0deg, rgb(251, 246, 241) 0%, rgb(226, 232, 247) 100%);
+        border-radius: 4px;
+        -webkit-box-align: center;
+        place-items: center;
+        position: relative;
+        color: rgb(38, 38, 38);
+        text-align: center;
+        font-feature-settings: "clig" 0, "liga" 0;
+        font-family: "GT America Expanded", "Arial Black", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 10;
+        line-height: 150%;
+        letter-spacing: 0.029px;
+    }
+.shop-by-style {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px 0;
+    text-align: center;
+}
+.style-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.style-item img{
+    border-radius: 10px;
+}
+.style-item p{
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .search-bar {
+        margin-left: 0;
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    .header-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .categories {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+    }
+    .categories div {
+        margin-left: 0;
+    }
+    .shop-by-price div {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+}
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+.footer-column h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.footer-column a {
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+.icons i {
+font-size: 20px;
+margin-left: 15px;
+color: #333;
+cursor: pointer;
+}
+.icons i:hover {
+color: #000;
+}
+
+.hover-container{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: -16px;
+    right: -16px;
+    padding: 0px 16px 24px;
+    top: 53px;
+    background: rgb(255, 255, 255);
+    border-top: 1px solid rgb(238, 238, 238);
+    transition: visibility 1s ease 0.1s;
+}
+
+.navigation-subcategory-list{
+    width: 66.6%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-right: 32px;
+}
+
+.navigation-subcategory-list h3{
+    font-family: "GT America Extended", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0px;
+    color: rgb(38, 38, 38);
+    padding: 24px 16px;
+}
+
+.navigation-subcategory-list ul{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(6, auto);
+    grid-auto-columns: 1fr;
+}
+
+.navigation-subcategory-list li{
+    font-family: inherit;
+    list-style: none;
+    border-bottom: 1px solid rgb(243, 243, 243);
+}
+
+.navigation-subcategory-list a{
+    display: block;
+    text-decoration: none;
+    padding: 16px;
+}
+
+.navigation-subcategory-list p{
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0px;
+}
+
+.category:hover .hover-container,
+.hover-container:hover{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* При наведении изменяем цвет фона и текста */
+.category:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Также меняем цвет текста внутри ссылки */
+.category:hover .category-title {
+    color: white;
+}
+
+.navigation-subcategory-list li:hover {
+    background-color: #F3F3F3;
+}
