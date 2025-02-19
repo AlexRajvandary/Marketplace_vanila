@@ -366,29 +366,6 @@ color: #000;
     margin: 0px;
 }
 
-.category:hover .hover-container,
-.hover-container:hover{
-    opacity: 1;
-    visibility: visible;
-}
-
-/* При наведении изменяем цвет фона и текста */
-.category:hover {
-    background-color: black;
-    color: white;
-}
-
-/* Также меняем цвет текста внутри ссылки */
-.category:hover .category-title {
-    color: white;
-}
-
 .navigation-subcategory-list li:hover {
     background-color: #F3F3F3;
-}
-
-.category:not(:hover) .hover-container:not(:hover) {
-    opacity: 0;
-    visibility: hidden;
-   
 }
