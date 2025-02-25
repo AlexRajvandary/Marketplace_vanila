@@ -70,17 +70,21 @@
             -moz-appearance: none;
         }
 
+        .sort{
+            position: absolute;
+            right: 120px;
+        }
+
         .product-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            padding: 20px;
+            margin-left: 120px;
+            margin-right: 120px;
         }
         .product-item {
             background: #fff;
-            padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
         .product-item img {
@@ -383,20 +387,79 @@
     </div>
     <div class="filter-section">
         <select>
-            <option value="all">All Categories</option>
+            <option value="all">Category</option>
             <option value="menswear">Menswear</option>
             <option value="womenswear">Womenswear</option>
             <option value="kids">Kids</option>
         </select>
         <select>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
+            <option value="all">Brand</option>
+            <option value="menswear">Adidas</option>
+            <option value="womenswear">Nike</option>
+            <option value="kids">Hugo Boss</option>
+        </select>
+        <select>
+            <option value="all">Color</option>
+            <option value="menswear">Red</option>
+            <option value="womenswear">White</option>
+            <option value="kids">Black</option>
         </select>
         <input type="number" placeholder="Min Price">
         <input type="number" placeholder="Max Price">
-        <button>Apply Filters</button>
+        <select class="sort">
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+        </select>
     </div>
     <div class="product-list">
+        <div class="product-item">
+            <img src="../img/1.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/2.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/3.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/4.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/1.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/2.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/3.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/4.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/1.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/2.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/3.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
+        <div class="product-item">
+            <img src="../img/4.webp" alt="Product">
+            <p>Product Name</p>
+        </div>
         <div class="product-item">
             <img src="../img/1.webp" alt="Product">
             <p>Product Name</p>
