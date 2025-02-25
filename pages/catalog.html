@@ -63,6 +63,7 @@
         .filter-section select, .filter-section input {
             padding: 10px;
             margin-right: 10px;
+            margin-bottom: 10px;
             border: 1px solid #000000;
             border-radius: 10px;
             font-family: inherit;
@@ -123,7 +124,7 @@
             font-weight: 100;
             margin-left: 10px;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 876px) {
             .filter-section {
                 display: flex;
                 flex-direction: column;
@@ -131,6 +132,9 @@
             }
             .product-list {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .sort{
+                position: inherit;
             }
         }
     </style>
@@ -154,8 +158,8 @@
         </div>
         <nav class="categories">
             <div class="categories-container">
-                <button class="category">
-                    <a href="pages/catalog.html" class="category-title">Menswear</a>
+                <button href="../pages/catalog.html" class="category">
+                    <a href="../pages/catalog.html" class="category-title">Menswear</a>
                     <div class="hover-container">
                         <div class="navigation-subcategory-list">
                             <h3>Shop by category</h3>
