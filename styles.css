@@ -34,7 +34,7 @@ header {
     max-width: 704px;
 }
 .search-bar input {
-    width: 100%;
+    width: 80%;
     padding: 8px;
     border: 1.5px solid #7c7c7c;
     border-radius: 30px;
@@ -186,7 +186,7 @@ button.category{
     margin: 2px;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-100%);
     width: 40px;
     height: 40px;
     background: #ffffff;
@@ -246,7 +246,7 @@ button.category{
 .style-item p{
     font-weight: bold;
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     header {
         flex-direction: column;
         align-items: center;
@@ -254,7 +254,7 @@ button.category{
     }
     .search-bar {
         margin-left: 0;
-        width: 90%;
+        width: 70%;
         margin-bottom: 10px;
     }
     .header-buttons {
@@ -264,7 +264,6 @@ button.category{
     .categories {
         display: flex;
         flex-wrap: nowrap;
-        overflow-x: auto;
         white-space: nowrap;
         padding: 10px;
     }
@@ -274,6 +273,15 @@ button.category{
     .shop-by-price div {
         width: 100%;
         max-width: 100%;
+    }
+    .slider-container{
+        display: none;
+    }
+    .popular-items{
+        display: none;
+    }
+    .shop-by-style {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 footer {
