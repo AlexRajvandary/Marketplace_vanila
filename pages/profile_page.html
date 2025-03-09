@@ -21,7 +21,7 @@
             justify-content: flex-start;
             width: 90%;
             max-width: 1280px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         .profile {
             display: flex;
@@ -137,7 +137,7 @@
             display: flex;
         }
         
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             .sell-now,
             .sign-up,
             .categories{
@@ -147,9 +147,10 @@
                 flex-direction:  column-reverse;
                 padding: 0px 10px;
                 padding-top: 10px;
+                min-height: auto;
             }
             .body{
-                margin-left: 20px;
+                margin-left: 10px;
             }
             .profile-container {
                 width: 100%;
@@ -160,6 +161,9 @@
                 justify-content: space-between;
                 width: 100%;
                 align-items: center;
+            }
+            .profile-buttons-container{
+                margin-top: 10px;
             }
             .stats-container {
                 display: flex;
@@ -177,6 +181,7 @@
             .button {
                 flex: 1;
                 text-align: center;
+                padding: 7.5px 20px;
             }
             .products{
                 grid-template-columns: repeat(3, 1fr);
@@ -185,9 +190,7 @@
             {
                 width: 100%;
             }
-            .search-bar input{
-                padding-right: 20px;
-            }
+            
             .main_nav{
                margin-bottom: 8px;
             }
@@ -206,6 +209,22 @@
            }
            .icons{
             margin: 5px;
+           }
+           .search-bar{
+            display: none;
+           }
+           h2{
+            font-weight: 50;
+            font-size: larger;
+           }
+           h3{
+            margin: 0px;
+            font-size: larger;
+            font-weight: 50;
+           }
+           .bio{
+            margin-top: 25px;
+            margin-bottom: 10px;
            }
         }
     </style>
@@ -510,8 +529,25 @@
         <div class="product shop"></div>
         <div class="product shop"></div>
         <div class="product shop"></div>
+        <div class="product shop"></div>
+        <div class="product shop"></div>
+        <div class="product shop"></div>
+        <div class="product shop"></div>
+        <div class="product shop"></div>
+        <div class="product shop"></div>
+        <div class="product shop"></div>
+        <div class="product shop"></div>
+        <div class="product shop"></div>
     </div>
     <div id="sold" class="products" style="display: none;">
+        <div class="product sold">Sold</div>
+        <div class="product sold">Sold</div>
+        <div class="product sold">Sold</div>
+        <div class="product sold">Sold</div>
+        <div class="product sold">Sold</div>
+        <div class="product sold">Sold</div>
+        <div class="product sold">Sold</div>
+        <div class="product sold">Sold</div>
         <div class="product sold">Sold</div>
         <div class="product sold">Sold</div>
     </div>
