@@ -3,9 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clothing Marketplace</title>
+    <title>User Profile Prototype</title>
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="styles.css"/>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-container {
+            display: flex;
+            justify-content: flex-start;
+            width: 90%;
+            max-width: 1280px;
+            margin-top: 20px;
+        }
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #4A90E2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        .stats-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .stats {
+            display: flex;
+            gap: 20px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .bio {
+            margin-top: 10px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: flex-start;
+            width: 90%;
+            width: 1280px;
+        }
+        footer{
+            display: flex;
+            width: 90%;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+        .tab.active {
+            border-bottom: 2px solid black;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            width: 90%;
+            max-width: 1280px;
+            margin-top: 20px;
+        }
+        .product {
+            text-align: center;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border-radius: 5px;
+        }
+        .product.shop {
+            background-color: #F5A623;
+        }
+        .product.sold {
+            background-color: #7ED321;
+        }
+
+        .profile-buttons-container{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 600px) {
+            .sell-now,
+            .sign-up,
+            .categories{
+                display: none;
+            }
+            .header{
+                flex-direction:  column-reverse;
+                padding: 0px 10px;
+                padding-top: 10px;
+            }
+            .body{
+                margin-left: 20px;
+            }
+            .profile-container {
+                width: 100%;
+                justify-content: center;
+            }
+            .profile-header {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+            }
+            .stats-container {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-bottom: 10px;
+            }
+            .stats {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+            .buttons {
+                width: 100%;
+            }
+            .button {
+                flex: 1;
+                text-align: center;
+            }
+            .products{
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .search-bar
+            {
+                width: 100%;
+            }
+            .search-bar input{
+                padding-right: 20px;
+            }
+            .main_nav{
+               margin-bottom: 8px;
+            }
+            .tabs{
+                width: 90%;
+            }
+           .burger_nav{
+                position: fixed;
+                left: 10px;
+                font-size: 25px;
+           }
+           .user_icons{
+                position: fixed;
+                right: 10px;
+           }
+           .icons{
+            margin: 5px;
+           }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,13 +208,18 @@
                 <input type="text" placeholder="Search...">
             </div>
             <div class="main_nav">
-                <button class="sell-now">Sell Now</button>
-                <button class="sign-up">Sign Up</button>
-                <div class="icons">
-                    <i class="bi bi-cart"></i>  <!-- Корзина -->
-                    <i class="bi bi-heart"></i> <!-- Избранное -->
-                    <i class="bi bi-person"></i> <!-- Профиль -->
-                    <i class="bi bi-bell"></i>  <!-- Уведомления -->              
+                <div class="burger_nav">
+                    <i class="bi bi-list"></i>
+                </div>
+                <div class="user_icons">
+                    <button class="sell-now">Sell Now</button>
+                    <button class="sign-up">Sign Up</button>
+                    <div class="icons">
+                        <i class="bi bi-cart"></i>  <!-- Корзина -->
+                        <i class="bi bi-heart"></i> <!-- Избранное -->
+                        <i class="bi bi-person"></i> <!-- Профиль -->
+                        <i class="bi bi-bell"></i>  <!-- Уведомления -->              
+                    </div>
                 </div>
             </div>
         </div>
@@ -270,112 +469,42 @@
             </div>
         </nav>
     </header>
-  
-    <div class="main-content">
-        <div class="popular-items section-title">Popular This Week</div>
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide">
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
+    <div class="profile-container">
+        <div class="profile">
+            <div class="profile-header">
+                <div class="avatar">A</div>
+                <div class="stats-container">
+                    <h2>@username</h2>
+                    <div class="stats">
+                        <div class="stat"><strong>120</strong><br>Followers</div>
+                        <div class="stat"><strong>80</strong><br>Following</div>
+                        <div class="stat"><strong>30</strong><br>Sold</div>
                     </div>
-                   
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
-                    </div>
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
-                    </div>
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
-                    </div>
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="slide">
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
-                    </div>
-                   
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
-                    </div>
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
-                    </div>
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
-                    </div>
-                    <div class="popular-item">
-                        <a href="pages/product_page.html">                       
-                            <img src="img/1.webp" alt="Popular Item">
-                            <p>Date night</p>
-                        </a>
-                    </div>
-                   
                 </div>
             </div>
-            <div class="arrow prev" onclick="moveSlide(-1)">&#10094;</div>
-            <div class="arrow next" onclick="moveSlide(1)">&#10095;</div>
+            <div class="profile-buttons-container">
+                <button class="button">message</button>
+                <button class="button">follow</button>
+            </div>
+            <div class="bio">
+                <h3>User Name</h3>
+            </div>
         </div>
-       
-        <div class="section-title">Shop by Price</div>
-        <div class="shop-by-price">
-            <div><a href="pages/catalog.html">Under 10£</a></div>
-            <div><a href="pages/catalog.html">Under 20£</a></div>
-            <div><a href="pages/catalog.html">Under 50£</a></div>
-            <div><a href="pages/catalog.html">Under 100£</a></div>
-        </div>
-        <div class="section-title">Shop by Style</div>
-        <div class="shop-by-style">
-            <a href="pages/catalog.html">
-                <div class="style-item"><img src="img/sports.webp" alt="Style Item"><p class="style-label">Vintage Sports</p></div>
-            </a>
-            <a href="pages/catalog.html">
-                <div class="style-item"><img src="img/baggy.webp" alt="Style Item"><p class="style-label">Baggy Basics</p></div>
-            </a>
-            <a href="pages/catalog.html">
-                <div class="style-item"><img src="img/carh.webp" alt="Style Item"><p class="style-label">Workwear</p></div>
-            </a>
-            <a href="pages/catalog.html">
-                <div class="style-item"><img src="img/stripe_sweat__2_.webp" alt="Style Item"><p class="style-label">Stripes</p></div>
-            </a>
-            <a href="pages/catalog.html">
-                <div class="style-item"><img src="img/roma__3_.webp" alt="Style Item"><p class="style-label">'90s Romance</p></div>
-            </a>
-           <a href="pages/catalog.html">
-                <div class="style-item"><img src="img/gym_e.webp" alt="Style Item"><p class="style-label">Gym Essentials</p></div>
-           </a>
-        </div>
-        <div class="section-title">The Depop Edit</div>
+    </div>
+
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('shop')">Shop</div>
+        <div class="tab" onclick="showTab('sold')">Sold</div>
+    </div>
+
+    <div id="shop" class="products">
+        <div class="product shop"></div>
+        <div class="product shop"></div>
+        <div class="product shop"></div>
+    </div>
+    <div id="sold" class="products" style="display: none;">
+        <div class="product sold">Sold</div>
+        <div class="product sold">Sold</div>
     </div>
     <footer>
         <div class="footer-column">
@@ -398,8 +527,15 @@
             <a href="#">Depop Status</a>
         </div>
     </footer>
-    <script src="script.js">
-     
+    <script src="../script.js"></script>
+    <script>
+        function showTab(tabName) {
+            document.getElementById('shop').style.display = tabName === 'shop' ? 'grid' : 'none';
+            document.getElementById('sold').style.display = tabName === 'sold' ? 'grid' : 'none';
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        
     </script>
 </body>
 </html>
