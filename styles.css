@@ -70,6 +70,9 @@ header {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    height: 32px;
+    align-items: center;
+    margin-top: 15px;
 }
 .main_nav .sell-now {
     background-color: #333;
