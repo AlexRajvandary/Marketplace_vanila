@@ -7,13 +7,12 @@
     <title>Marketplace Chat</title>
     <style>
         body {
-        
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        height: 100vh;
-        background: linear-gradient(to right, #74ebd5, #acb6e5), 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background: linear-gradient(to right, #74ebd5, #acb6e5), 
                 url('../pattern-background.svg'); 
                 background-size: cover, contain; 
                 background-repeat: no-repeat, repeat; 
@@ -31,6 +30,28 @@
             padding: 5px;
             border-right: 1px solid #ccc;
             overflow-y: auto;
+        }
+        .chat-tabs {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #ffffff;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .chat-tab {
+            padding:15px 20px;
+            border-radius:20px;
+        }
+        .chat-tab.active {
+            background: #007bff;
+            color: white;
+        }
+        .chat-list-content {
+            display: none;
+        }
+        .chat-list-content.active {
+            display: block;
         }
         .chat-list-item {
             display: flex;
@@ -166,46 +187,106 @@
 <body>
     <div class="chat-container">
         <div class="chat-list">
-            <div class="chat-list-item" onclick="selectChat(this, 'Seller 1')">
-                <div class="chat-avatar"></div> 
-                <div class="chat-info">
-                    <div class="chat-name">Seller 1</div>
-                    <div class="last-message">Last message</div>
+            <div class="chat-tabs">
+                <div class="chat-tab active" onclick="switchTab('sellers')">Sellers</div>
+                <div class="chat-tab" onclick="switchTab('buyers')">Buyers</div>
+            </div>
+            <div id="sellers" class="chat-list-content active">
+                <div class="chat-list-item" onclick="selectChat(this, 'Seller 1')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Seller 1</div>
+                        <div class="last-message">Last message</div>
+                    </div>
+                </div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Seller 2')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Seller 2</div>
+                        <div class="last-message">Last message</div>
+                    </div>
+                </div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Seller 3')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Seller 2</div>
+                        <div class="last-message">Last message</div>
+                    </div>
+                </div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Seller 4')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Seller 2</div>
+                        <div class="last-message">Last message</div>
+                    </div>
+                </div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Seller 5')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Seller 2</div>
+                        <div class="last-message">Last message</div>
+                    </div>
                 </div>
             </div>
-            <div class="chat-list-item" onclick="selectChat(this, 'Seller 2')">
-                <div class="chat-avatar"></div> 
-                <div class="chat-info">
-                    <div class="chat-name">Seller 2</div>
-                    <div class="last-message">Last message</div>
+            <div id="buyers" class="chat-list-content">
+                <div class="chat-list-item" onclick="selectChat(this, 'Buyer 1')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Buyer 1</div>
+                        <div class="last-message">Last message</div>
+                    </div>
                 </div>
-            </div>
-            <div class="chat-list-item" onclick="selectChat(this, 'Seller 3')">
-                <div class="chat-avatar"></div> 
-                <div class="chat-info">
-                    <div class="chat-name">Seller 3</div>
-                    <div class="last-message">Last message</div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Buyer 2')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Buyer 2</div>
+                        <div class="last-message">Last message</div>
+                    </div>
                 </div>
-            </div>
-            <div class="chat-list-item" onclick="selectChat(this, 'Seller 4')">
-                <div class="chat-avatar"></div> 
-                <div class="chat-info">
-                    <div class="chat-name">Seller 4</div>
-                    <div class="last-message">Last message</div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Buyer 3')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Buyer 3</div>
+                        <div class="last-message">Last message</div>
+                    </div>
+                </div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Buyer 4')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Buyer 4</div>
+                        <div class="last-message">Last message</div>
+                    </div>
+                </div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Buyer 5')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Buyer 5</div>
+                        <div class="last-message">Last message</div>
+                    </div>
+                </div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Buyer 6')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Buyer 6</div>
+                        <div class="last-message">Last message</div>
+                    </div>
+                </div>
+                <div class="chat-list-item" onclick="selectChat(this, 'Buyer 7')">
+                    <div class="chat-avatar"></div>
+                    <div class="chat-info">
+                        <div class="chat-name">Buyer 7</div>
+                        <div class="last-message">Last message</div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="chat-window">
-            <div class="chat-header">
+            <div class="chat-header" id="chatHeader">
                 <div class="chat-avatar"></div>
-                <div id="chatName">Select a Seller</div>
+                Select a Chat
             </div>
-            
             <div class="chat-messages" id="chatMessages">
-                <div class="message seller">
-                    Hello! How can I help you?
-                    <span class="timestamp">12:00 PM</span>
-                </div>
+                <div class="message seller">Hello! How can I help you?</div>
             </div>
             <div class="chat-input">
                 <input type="text" id="messageInput" placeholder="Type a message...">
@@ -215,6 +296,19 @@
     </div>
     
     <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.chat-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.chat-list-content').forEach(c => c.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+            document.querySelector(`.chat-tab[onclick="switchTab('${tab}')"]`).classList.add('active');
+        }
+
+        function selectChat(element, chatName) {
+            document.getElementById('chatHeader').innerHTML = `<div class='chat-avatar'></div> ${chatName}`;
+            document.querySelectorAll('.chat-list-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+        }
+
         function sendMessage() {
             const input = document.getElementById('messageInput');
             const message = input.value.trim();
@@ -228,12 +322,6 @@
                 input.value = '';
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
-        }
-
-        function selectChat(element, sellerName) {
-            document.getElementById('chatName').innerText = `${sellerName}`;
-            document.querySelectorAll('.chat-list-item').forEach(item => item.classList.remove('active'));
-            element.classList.add('active');
         }
     </script>
 </body>
